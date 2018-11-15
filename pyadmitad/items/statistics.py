@@ -17,7 +17,7 @@ __all__ = (
 
 class StatisticBase(Item):
 
-    STATUSES = (1, 2, 3)
+    STATUSES = ('pending', 'declined', 'approved', 'approved_but_stalled')
     SOURCES = ('g', 'y')
     ACTION_TYPES = ('lead', 'Lead')
 
@@ -243,6 +243,11 @@ class StatisticSubIds(StatisticBase):
         'date_end': Item.check_date,
         'website': int,
         'campaign': int,
+        'subid': str,
+        'subid1': str,
+        'subid2': str,
+        'subid3': str,
+        'subid4': str,
     }
 
     URL = Item.prepare_url('statistics/sub_ids%s')
